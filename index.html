@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter's Screenshot Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="navbar">
+  <nav>
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./public/TLOU.html">The Last of Us</a></li>
+      <li><a href="./public/CP2077.html">Cyberpunk 2077</a></li>
+      <li><a href="./public/RDR2.html">Red Dead Redemption 2</a></li>
+      <li><a href="./public/DSouls.html">Demon's Souls</a></li>
+    </ul>
+  </nav>
+</div>
+<h1 style="text-align: center; color: white;">Peter's Screenshot Collection</h1>
+<div class="menu">
+  
+</div>
+
+<div class="container">
+    
+    <div class="mySlides">
+        <a href="./public/TLOU.html"><img src="assets/images/IMG_0320.JPG" style="width:100%"></a>
+    </div>
+  
+    <div class="mySlides">
+        <a href="./public/CP2077.html"><img src="assets/images/IMG_0342.JPG" style="width:100%"></a>
+    </div>
+  
+    <div class="mySlides">
+        <a href="./public/RDR2.html"><img src="./assets/images/IMG_0123.JPG" style="width:100%"></a>
+    </div>
+  
+    <div class="mySlides">
+        <a href="./public/DSouls.html"><img src="./assets/images/IMG_0101.JPG" style="width:100%"></a> 
+    </div>
+  
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="assets/images/IMG_0320.JPG" style="width:100%" onclick="currentSlide(1)" alt="The Last of Us">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="assets/images/IMG_0342.JPG" style="width:100%" onclick="currentSlide(2)" alt="Cyberpunk 2077">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="assets/images/IMG_0123.JPG" style="width:100%" onclick="currentSlide(3)" alt="Red Dead Redemption 2">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="assets/images/IMG_0101.JPG" style="width:100%" onclick="currentSlide(4)" alt="Demon's Souls">
+      </div>
+    </div>
+</div>
+
+<script>
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+
+</script>
+</body>
+
+</html>
