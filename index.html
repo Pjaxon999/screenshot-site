@@ -15,35 +15,32 @@
 <body>
 
 <div class="navbar">
-  <nav>
     <ul>
       <li class="home"><a href="./index.html">Home</a></li>
-        <li class="links"><a href="./public/TLOU.html">The Last of Us</a></li>
-        <li class="links"><a href="./public/CP2077.html">Cyberpunk 2077</a></li>
-        <li class="links"><a href="./public/RDR2.html">Red Dead Redemption 2</a></li>
-        <li class="links"><a href="./public/DSouls.html">Demon's Souls</a></li>
-      </a>
+      <li><a href="./public/TLOU.html">The Last of Us</a></li>
+      <li><a href="./public/CP2077.html">Cyberpunk 2077</a></li>
+      <li><a href="./public/RDR2.html">Red Dead Redemption 2</a></li>
+      <li><a href="./public/DSouls.html">Demon's Souls</a></li>
     </ul>
-  </nav>
 </div>
 <h1 style="text-align: center; color: white;">Peter's Screenshot Collection</h1>
 
 <div class="container">
     
     <div class="mySlides">
-        <a href="./public/TLOU.html"><img src="assets/images/IMG_0320.JPG" style="width:100%"></a>
+        <a href="./public/TLOU.html"><img src="assets/images/IMG_0320.JPG" alt="A post apocalyptic basketball court"></a>
     </div>
   
     <div class="mySlides">
-        <a href="./public/CP2077.html"><img src="assets/images/IMG_0342.JPG" style="width:100%"></a>
+        <a href="./public/CP2077.html"><img src="assets/images/IMG_0342.JPG" alt="A futuristic city skyline"></a>
     </div>
   
     <div class="mySlides">
-        <a href="./public/RDR2.html"><img src="./assets/images/IMG_0123.JPG" style="width:100%"></a>
+        <a href="./public/RDR2.html"><img src="./assets/images/IMG_0123.JPG" alt="A view from a hill near an old western town with a faintly visible rainbow"></a>
     </div>
   
     <div class="mySlides">
-        <a href="./public/DSouls.html"><img src="./assets/images/IMG_0101.JPG" style="width:100%"></a> 
+        <a href="./public/DSouls.html"><img src="./assets/images/IMG_0101.JPG"  alt="An imposing Castle wall and gate clearly in a state of disrepair. Some of it is on fire."></a> 
     </div>
   
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -55,52 +52,22 @@
   
     <div class="row">
       <div class="column">
-        <img class="demo cursor" src="assets/images/IMG_0320.JPG" style="width:100%" onclick="currentSlide(1)" alt="The Last of Us">
+        <img class="demo cursor" src="assets/images/IMG_0320.JPG" onclick="currentSlide(1)" alt="The Last of Us">
       </div>
       <div class="column">
-        <img class="demo cursor" src="assets/images/IMG_0342.JPG" style="width:100%" onclick="currentSlide(2)" alt="Cyberpunk 2077">
+        <img class="demo cursor" src="assets/images/IMG_0342.JPG" onclick="currentSlide(2)" alt="Cyberpunk 2077">
       </div>
       <div class="column">
-        <img class="demo cursor" src="assets/images/IMG_0123.JPG" style="width:100%" onclick="currentSlide(3)" alt="Red Dead Redemption 2">
+        <img class="demo cursor" src="assets/images/IMG_0123.JPG" onclick="currentSlide(3)" alt="Red Dead Redemption 2">
       </div>
       <div class="column">
-        <img class="demo cursor" src="assets/images/IMG_0101.JPG" style="width:100%" onclick="currentSlide(4)" alt="Demon's Souls">
+        <img class="demo cursor" src="assets/images/IMG_0101.JPG" onclick="currentSlide(4)" alt="Demon's Souls">
       </div>
     </div>
 </div>
 
-<script>
+<script src="./index.js"></script>
 
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    let captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
-  }
-
-</script>
 </body>
 
 </html>
