@@ -9,6 +9,12 @@ body {
     padding: 0;
 }
 
+h1 {
+    color: white;
+    text-align: center;
+    margin: 30px 0px;
+}
+
 ul {
     display: flex;
     flex: 1;
@@ -30,7 +36,8 @@ li a:hover {
 }
 
 img {
-    width: 100%
+    width: 100%;
+    height: auto;
 }
 
 .gallery {
@@ -52,6 +59,9 @@ img {
 
 .container {
     position: relative;
+    width: 60%;
+    height: auto;
+    margin: auto;
 }
 
 .mySlides {
@@ -115,12 +125,22 @@ img {
     opacity: 1;
 }
 
-@media screen and (max-width: 755px) {
+@media only screen and (max-width: 768px) {
     .navbar {
         display: none;
+    }
+
+    .container {
+        width: 100%;
     }
 
     .gallery {
         display: block;
     }
   }
+
+@media only screen and (max-width: 992px) {
+    .container {
+        width: 80%;
+    }
+}
